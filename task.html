@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>学生档案</title>
+        <style type="text/css">   
+            fieldset{
+                width: 400px;
+                height: 500px;
+                padding: 10px 20px;
+                margin-left: 100px;
+            }
+            input{
+                display: inline;
+                width: 380px;
+                height: 27px;
+                margin-bottom: 10px;
+                font: 16px/30px arial;
+            }
+            meter{
+                width: 400px;
+                height: 30px;
+                margin-bottom: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <h2 style="margin-left:100px;">学生信息</h2>
+        <fieldset>
+            <legend style="color:red;">学生档案</legend>
+            <form action="#" method="get">
+                姓名：
+                <input type="text" name="uesrName" autocomplete="on" autofocus="autofocus" placeholder="请输入姓名" required="required" />
+                <span style="color:red; display: inline">*</span>
+                学号：
+                <input type="text" name="uesrName" autocomplete="on" autofocus="autofocus" placeholder="请输入学号" required="required" />
+                <span style="color:red;">*</span>
+                手机号码：
+                <input type="tel" name="telphone" id="phone" placeholder="请输入手机号" maxlength="11"  required="required" />
+                <span style="color:red;">*</span>
+                邮箱地址：
+                <input type="email" name="e-mail" id="email" placeholder="请输入邮箱地址" required="required" autocomplete="on" />
+                <span style="color:red;">*</span>
+                录取学校：
+                <input type="seearch" name="school"  list="mylist"/>
+                入学成绩：
+                <input type="number" name="grade" id="grade" min="0" max="150"  value="" />
+                入学时间：
+                <input type="date" />    
+                <input type="submit" value="提交" />
+                <datalist id="mylist">
+                    <option value="河北师范大学"></option>
+                    <option value="河北农业大学"></option>
+                    <option value="清华大学"></option>
+                    <option value="北京大学"></option>
+                    <option value="河北经贸大学"></option>
+                </datalist>
+            </form>
+        </fieldset>
+        <script>
+            var phone=document.getElementById("phone")
+            var grade=document.getElementById("grade")
+            var show=document.getElementById("show")
+            grade.oninput=function(){
+                show.value=grade.value;
+            }
+        </script>
+    </body>
+</html>
